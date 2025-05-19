@@ -2,6 +2,10 @@ import { Box, Breadcrumbs, Link, Typography } from '@mui/material'
 import React from 'react';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { useNavigate } from 'react-router-dom';
+import MovieCard from './MovieCard';
+import ReviewForm from './ReviewForm';
+import Reviews from './Reviews';
+
 
 const MovieReview = () => {
   const navigate = useNavigate();
@@ -19,7 +23,7 @@ const MovieReview = () => {
   }
 
   const breadcrumbs = [
-      <Link underline="hover" key="1" color="inherit" href="/" onClick={handleHomeClick}>
+      <Link underline="hover" key="1" color="white" href="/" onClick={handleHomeClick}>
         Home
       </Link>,
       <Link
@@ -31,18 +35,26 @@ const MovieReview = () => {
       >
         Movies
       </Link>,
-      <Typography key="3" sx={{ color: 'text.primary' }}>
+      <Typography key="3" color='inherit'>
         MovieName
       </Typography>,
     ];
   return (
-    <Box sx={{paddingTop: '70px'}}>
+    <Box sx={{padding: '50px', paddingTop: '70px', background: '#0f1729', color: 'white'}}>
       <Breadcrumbs
         separator={<NavigateNextIcon fontSize="small" />}
         aria-label="breadcrumb"
+        sx={{color: 'white'}}
       >
         {breadcrumbs}
       </Breadcrumbs>
+      <Box sx={{display: 'flex', }}>
+        <MovieCard/>
+        <Box sx={{display: 'flex', flexDirection: 'column', height: '70%', width: '70%'}}>
+        <ReviewForm/>
+        <Reviews/>
+        </Box>
+      </Box>
     </Box>
   )
 }
