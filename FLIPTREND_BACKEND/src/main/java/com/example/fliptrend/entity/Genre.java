@@ -1,8 +1,6 @@
 package com.example.fliptrend.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Genre {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long genreId;
 
     private String genreName;
