@@ -56,7 +56,9 @@ function Header() {
             </ListItem>
           ))}
         </List>
-        <Button variant="contained">Login</Button>
+        <Link to='/login'>
+          <Button variant="contained">Login</Button>
+        </Link>
         </Box>
       </Toolbar>
     </AppBar>

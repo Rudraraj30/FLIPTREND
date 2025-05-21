@@ -5,6 +5,7 @@ import Home from './components/Home'
 import Movies from './components/Movies'
 import Books from './components/Books'
 import MovieReview from './components/MovieReview'
+import Login from './components/Login'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
     <Header/>
       <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/books" element={<Books />} />
           <Route path="/movie/:id" element={<MovieReview />} />
